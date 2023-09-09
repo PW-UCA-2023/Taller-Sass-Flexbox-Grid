@@ -1,0 +1,84 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as m;
+
+#features {
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+
+    @include m.maxTablet {
+        flex-direction: column;
+    }
+
+    > section {
+        flex: 1;
+    }
+
+    #side-left {
+        @include m.flex-container;
+
+        figure {
+            width: 100%;
+            height: auto;
+
+            position: relative;
+            left: -25%;
+
+            @include m.maxTablet {
+                position: static;
+
+                img {
+                    width: 100%;
+                    @include m.img-contain;
+                }
+            }
+        }
+
+    }
+
+    #side-right {
+        @include m.flex-container;
+        flex-direction: column;
+
+        .centered-quote {
+            text-align: center;
+            margin: 2rem 0;
+
+            h3 {
+                font-size: 2.1rem;
+                color: v.$theme-main-text;
+                font-weight: 700;
+                margin: 1rem 0;
+            }
+            p {
+                font-size: 1.1rem;
+                color: v.$theme-secondary-text;
+                max-width: 550px;
+            }
+        }
+    }
+}
+
+// @media (max-width: 1200px) {
+//     #features {
+//         flex-direction: column;
+    
+//         #side-left {
+//             figure {
+//                 position: static;
+//             }
+
+//             img {
+//                 width: 100%;
+//                 @include m.img-contain;
+//             }
+    
+//         }
+//     }
+// }
+
+@include m.maxTablet {
+    :root {
+        font-size: 0.8rem;
+    }
+}
