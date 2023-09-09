@@ -1,0 +1,71 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as m;
+
+header {
+    background-color: v.$theme-main-color;
+    z-index: 10;
+
+    >h1 {
+        padding: 0.5rem;
+        color: white;
+        text-align: center;
+        font-size: 3rem;
+        user-select: none;
+    }
+
+    @include m.maxPhone {
+        display: none;
+    }
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: v.$theme-main-color;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 1rem 1rem;
+    z-index: 10;
+
+    .nav-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+
+        >li {
+            list-style: none;
+        }
+
+        a {
+            display: inline-block;
+            padding: 1.5rem;
+            color: white;
+            text-decoration: none;
+
+            &:hover {
+                background-color: v.$theme-button-one-hover;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+    }
+
+    .nav-container {
+        @include m.maxPhone {
+            display: none;
+        }
+    }
+
+    @include m.maxPhone {
+        padding: 1.5rem;
+    }
+}
+
+#menu-icon {
+    display: none;
+
+    @include m.maxPhone {
+        display: block;
+        height: 1.5rem;
+    }
+}
