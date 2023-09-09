@@ -1,0 +1,41 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as m;
+
+#tools {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h4 {
+        font-size: 1.8em;
+        color: v.$theme-main-text;
+    }
+
+    #tools-info {
+        margin-top: 2rem;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .tool-item {
+        flex: 0 1 20rem; 
+        /*
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: 20rem;
+        */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 1rem;
+
+        img {
+            width:3rem;
+        }
+    }
+}

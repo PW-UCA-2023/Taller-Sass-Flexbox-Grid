@@ -1,0 +1,11 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as m;
+
+#sponsors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
