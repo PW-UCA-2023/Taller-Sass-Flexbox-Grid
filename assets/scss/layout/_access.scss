@@ -1,0 +1,19 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as m;
+
+#access {
+    align-items: center;
+    justify-content: center;
+
+    figure {
+        width: 100%;
+        height: auto;
+        max-width: 1024px;
+
+        img {
+            width: 100%;
+            height: auto;
+            @include m.img-contain;
+        }
+    }
+}
